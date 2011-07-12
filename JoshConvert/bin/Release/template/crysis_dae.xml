@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <authoring_tool>JoshConvert</authoring_tool>
+    </contributor>
+    <created>(created_date)</created>
+    <modified>(modified_date)</modified>
+    <revision>1.4.1</revision>
+    <unit meter="1.0" name="meter"></unit>
+  </asset>
+  <library_images>
+    <image id="(cloudname)_img">
+      <init_from>(imagefolder)(imagename)</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="(cloudname)-1-(cloudname)-phys1_fx">
+      <profile_COMMON>
+        <newparam sid="(cloudname)_surface">
+          <surface type="2D">
+            <init_from>(cloudname)_img</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="(cloudname)_sampler">
+          <sampler2D>
+            <source>(cloudname)_surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="default">
+          <phong>
+            <emission>
+              <color sid="emission">0.000000 0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000 0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="(cloudname)_sampler" texcoord="diffuse_TEXCOORD"></texture>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.000000 0.000000 0.000000 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">0.000000</float>
+            </shininess>
+            <reflective>
+              <color sid="reflective">0.000000 0.000000 0.000000 1.000000</color>
+            </reflective>
+            <reflectivity>
+              <float sid="reflectivity">0.000000</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <color sid="transparent">0.000000 0.000000 0.000000 0.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">0.000000</float>
+            </transparency>
+            <index_of_refraction>
+              <float sid="index_of_refraction">0.000000</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="(cloudname)-1-(cloudname)-phys1">
+      <instance_effect url="#(cloudname)-1-(cloudname)-phys1_fx"></instance_effect>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="(cloudname)">
+      <mesh>
+        <source id="(cloudname)-Pos">
+          <float_array id="(cloudname)-Pos-array" count="(pos_count)">(pos_content)</float_array>
+          <technique_common>
+            <accessor source="#(cloudname)-Pos-array" count="(pos_assessor_count)" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="(cloudname)-Normal">
+          <float_array id="(cloudname)-Normal-array" count="(normal_count)">(normal_content)</float_array>
+          <technique_common>
+            <accessor source="#(cloudname)-Normal-array" count="(normal_assessor_count)" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="(cloudname)-Texture_Projection">
+          <float_array id="(cloudname)-Texture_Projection-array" count="(texcoord_count)">(texcoord_content)</float_array>
+          <technique_common>
+            <accessor source="#(cloudname)-Texture_Projection-array" count="(texcoord_assessor_count)" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="(cloudname)-Vtx">
+          <input semantic="POSITION" source="#(cloudname)-Pos"/>
+        </vertices>
+        <triangles count="(triangle_count)" material="(cloudname)-1-(cloudname)-phys1">
+          <input semantic="VERTEX" source="#(cloudname)-Vtx" offset="0"/>
+          <input semantic="NORMAL" source="#(cloudname)-Normal" offset="1"/>
+          <input semantic="TEXCOORD" source="#(cloudname)-Texture_Projection" offset="2"/>
+          <p>(triangle_content) </p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="visual_scenes_0" name="untitled">
+      <node id="CryExportNode_(cloudname)-CGF-(cloudname)-DoExport-MergeNodes">
+        <translate sid="translation">0.000000 0.000000 0.000000</translate>
+        <rotate sid="rotation_z">0.000000 0.000000 1.000000 0.000000</rotate>
+        <rotate sid="rotation_y">0.000000 1.000000 0.000000 0.000000</rotate>
+        <rotate sid="rotation_x">1.000000 0.000000 0.000000 0.000000</rotate>
+        <scale sid="scale">1.000000 1.000000 1.000000</scale>
+        <node id="model%(cloudname)%">
+          <translate sid="translation">0.000000 0.000000 0.000000</translate>
+          <rotate sid="rotation_z">0.000000 0.000000 1.000000 0.000000</rotate>
+          <rotate sid="rotation_y">0.000000 1.000000 0.000000 0.000000</rotate>
+          <rotate sid="rotation_x">1.000000 0.000000 0.000000 0.000000</rotate>
+          <scale sid="scale">1.000000 1.000000 1.000000</scale>
+          <node id="mesh0%(cloudname)%">
+            <translate sid="translation">0.000000 0.000000 0.000000</translate>
+            <rotate sid="rotation_z">0.000000 0.000000 1.000000 0.000000</rotate>
+            <rotate sid="rotation_y">0.000000 1.000000 0.000000 0.000000</rotate>
+            <rotate sid="rotation_x">1.000000 0.000000 0.000000 0.000000</rotate>
+            <scale sid="scale">1.000000 1.000000 1.000000</scale>
+            <instance_geometry url="#(cloudname)">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="(cloudname)-1-(cloudname)-phys1" target="#(cloudname)-1-(cloudname)-phys1">
+                    <bind semantic="diffuse_TEXCOORD" target="(cloudname)-"></bind>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#visual_scenes_0"/>
+  </scene>
+</COLLADA>
